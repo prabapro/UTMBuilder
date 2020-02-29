@@ -1,5 +1,5 @@
-# Campaign-Link-Generator
-A Flexible Campaign Link Generator for using UTM and ITM links.
+# Campaign URL Builder
+A Flexible Campaign URL Builder for Dialog's Online Marketing campaigns.
 
 ## Notes
 
@@ -17,12 +17,6 @@ The developer can modify parameters with a settings object.
 
 1. initializes the page using settings data from a global object
 2. fetches form data and generates the urchin link
-
-#### Upcoming Features
-
-* validates form data - limits characters
-* autocomplete suggestions for campaign names
-* other small improvements (handling errors)
 
 #### Dependencies
 
