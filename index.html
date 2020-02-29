@@ -14,59 +14,80 @@
             <div id="Campaign-Link-Generator">
                 <h2>Campaign Link Generator</h2>
                 <small id="CLG-param-help" class="form-text text-muted">Add UTM and ITM parameters to your links!<br>UTM links are used for tracking from external sources.<br>ITM links are only used for internal tracking.</small><br>
+               
                 <!-- URL -->
                 <div class="form-group row">
                     <label for="url-param-entry" class="col-2 col-form-label"><b>Page URL</b></label>
                     <div class="col-10">
-                        <input class="form-control" type="text" id="url-param-entry" aria-describedby="url-param-help" placeholder="http://example.com/dir/page.html" required>
-                        <small id="url-param-help" class="form-text text-muted" > Copy and paste your URL.</small>
+                        <input class="form-control" type="text" id="url-param-entry" aria-describedby="url-param-help" required>
+                        <small id="url-param-help" class="form-text text-muted" > The full website URL [e.g: <code>https://www.dialog.lk/iphone11-pro-max]</small></code></small>
                     </div>
                 </div>
+
                 <!-- CAMPAIGN -->
                 <div class="form-group row">
-                    <label for="campaign-param-entry" class="col-2 col-form-label"><b>Campaign Name</b></label>
+                    <label for="campaign-param-entry" class="col-2 col-form-label"><b>Campaign Name</b> <sup>*</sup></label>
                     <div class="col-10">
                         <input class="form-control" type="text" id="campaign-param-entry" aria-describedby="url-param-help" >
-                        <small id="url-param-help" class="form-text text-muted">Identifies a specific product promotion or strategic campaign. Collaborate with each other to match this for each release.</small>
+                        <small id="url-param-help" class="form-text text-muted">Your campaign name [e.g: <code>iphone11_pro_max_pre_order]</code></small>
                     </div>
                 </div>
-                <!-- CONTENT -->
-                <div class="form-group row">
-                    <label for="content-param-entry" class="col-2 col-form-label"><b>Content Description</b></label>
+
+                <!-- CONTENT (Used as Language) -->
+                <!-- <div class="form-group row">
+                    <label for="content-param-entry" class="col-2 col-form-label"><b>Content Language</b></label>
                     <div class="col-10">
                         <input class="form-control" type="text" id="content-param-entry" aria-describedby="content-param-help">
                         <small id="url-param-help" class="form-text text-muted">Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link.</small>
                     </div>
-                </div>
-                <!-- TERMS -->
-                <div class="form-group row">
-                    <label for="term-param-entry" class="col-2 col-form-label"><b>Ads Terms</b></label>
-                    <div class="col-10">
-                        <input class="form-control" type="text" id="term-param-entry" aria-describedby="term-param-help">
-                        <small id="url-param-help" class="form-text text-muted">Used for paid search to identify keywords for your ad. (Normally not used)</small>
+                </div> -->
+
+                <div class="row">
+                    <div class="col-2 col-form-label">
+                        <label for="source-param-entry"><b>Language</b> <sup>*</sup></label>
+                    </div>
+                    <div class="form-group col-10">
+                        <select name="content" id="content-param-entry" class="form-control">
+                            <option selected value="english" data-medium="Website">English</option>
+                            <option value="sinhala" data-medium="Website">Sinhala</option>
+                            <option value="tamil" data-medium="Website">Tamil</option>
+                        </select>
+                        <small id="url-param-help" class="form-text text-muted">Campaign / Content language. i.e: The Facebook post is in Sinhala language.</small>
                     </div>
                 </div>
+
+                <!-- TERMS (Used as Customer Segment)-->
+                <div class="form-group row">
+                    <label for="term-param-entry" class="col-2 col-form-label"><b>Target Audience</b></label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" id="term-param-entry" aria-describedby="term-param-help">
+                        <small id="url-param-help" class="form-text text-muted"><b>Optional</b> - Can be used to identify specific targeted user segments from CLM systems. <code>[e.g: high_arpu_mobile_cx_base]</code><br>Also can be used for paid search to identify keywords for your ad. <code>[e.g: iphone+11]</code></small>
+                    </div>
+                </div>
+
                 <!-- SOURCES
                     (i) control your source and medium selections in this section
                         using the data-source and data-medium attributes (option elements)
                 -->
                 <div class="row">
                     <div class="col-2 col-form-label">
-                        <label for="source-param-entry"><b>Source/Medium</b></label>
+                        <label for="source-param-entry"><b>Source/Medium</b> <sup>*</sup></label>
                     </div>
                     <div class="form-group col-10">
                         <select name="source" id="source-param-entry" class="form-control">
                             <option selected>Select a source...</option>
-                            <option value="oshpd" data-source="oshpd.ca.gov" data-medium="Website">OSHPD Web Site</option>
-                            <option value="email" data-source="ManualEmail" data-medium="email">Manual Email</option>
-                            <option value="emailList" data-source="Campaigner" data-medium="email">Campaigner List</option>
-                            <option value="facebook" data-source="Facebook" data-medium="social">Facebook</option>
-                            <option value="twitter" data-source="Twitter" data-medium="social">Twitter</option>
-                            <option value="linkedin" data-source="LinkedIn" data-medium="social">LinkedIn</option>
+                            <option data-source="mydialog" data-medium="banner">MyDialog App Banner</option>
+                            <option data-source="google" data-medium="cpc">Google CPC</option>
+                            <option data-source="cvm" data-medium="sms">CVM SMS</option>
+                            <option data-source="Campaigner" data-medium="email">Campaigner List</option>
+                            <option data-source="Facebook" data-medium="social">Facebook</option>
+                            <option data-source="Twitter" data-medium="social">Twitter</option>
+                            <option data-source="LinkedIn" data-medium="social">LinkedIn</option>
                         </select>
                         <small id="url-param-help" class="form-text text-muted">Identifies where the link will be placed.</small>
                     </div>
                 </div>
+
                 <!-- RESULTS -->
                 <div class="row">
                     <div class="col-2 col-form-label">
@@ -78,12 +99,14 @@
                 </div>
             </div>
         </div>
-        <!-- bootstraps -->
 
+        <!-- bootstraps -->
         <script src="vendor/js/jquery-3.3.1.slim.min.js"></script>
         <script src="vendor/js/popper.min.js"></script>
         <script src="vendor/js/bootstrap.min.js"></script>
+        <!-- Clipboard -->
         <script src="vendor/js/clipboard.min.js"></script>
-        <script src="vendor/js/index.js"></script>
+        <!-- JS -->
+        <script src="js/index.js"></script>
     </body>
 </html>

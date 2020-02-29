@@ -28,7 +28,6 @@
 
         // collect and validate text entries
         ltObj.url = $( '#url-param-entry' ).val().toLowerCase();
-        ltObj.url = checkProtocol(ltObj.url);
         ltObj.campaign = validChars( $( '#campaign-param-entry' ) );
         ltObj.lcontent = validChars( $( '#content-param-entry' ) );
         ltObj.term = validChars( $( '#term-param-entry' ) );
@@ -65,23 +64,9 @@
 
         $('#generated-url').html(ltObj.htmlOutput);
     });
-
-    function checkProtocol(iURL) {
-        //force HTTPS compliance
-        var pURL;
-        if (!(iURL.search(/[^:\/\/]*$/) == 0)) {
-            pURL = iURL.match(/[^:\/\/]*$/);
-            pURL = 'https://' + pURL;
-
-        } else if (!(iURL.search(/[^:\/\/]*$/) == 1)) {
-            pURL = iURL;
-            pURL = 'https://' + pURL;
-        }
-        return pURL;
-    }
-
+    
     function validChars( inputElement ) {
-        return inputElement.val().replace( /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '' ).replace( /\s+/g, '_' );
+        return inputElement.val().replace( /[`~!@#$%^&*()|\-=?;:'",.<>\{\}\[\]\\\/]/gi, '' ).replace( /\s+/g, '_' );
     }
 
     $( '#generated-url' ).html( ltObj.htmlCopy );
