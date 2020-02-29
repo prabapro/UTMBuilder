@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>UTM Generator | Dialog Online Marketing</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Praba Ponnambalam">
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="Campaign-Link-Generator">
+                <h2>Campaign Link Generator</h2>
+                <small id="CLG-param-help" class="form-text text-muted">Add UTM and ITM parameters to your links!<br>UTM links are used for tracking from external sources.<br>ITM links are only used for internal tracking.</small><br>
+                <!-- URL -->
+                <div class="form-group row">
+                    <label for="url-param-entry" class="col-2 col-form-label"><b>Page URL</b></label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" id="url-param-entry" aria-describedby="url-param-help" placeholder="http://example.com/dir/page.html" required>
+                        <small id="url-param-help" class="form-text text-muted" > Copy and paste your URL.</small>
+                    </div>
+                </div>
+                <!-- CAMPAIGN -->
+                <div class="form-group row">
+                    <label for="campaign-param-entry" class="col-2 col-form-label"><b>Campaign Name</b></label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" id="campaign-param-entry" aria-describedby="url-param-help" >
+                        <small id="url-param-help" class="form-text text-muted">Identifies a specific product promotion or strategic campaign. Collaborate with each other to match this for each release.</small>
+                    </div>
+                </div>
+                <!-- CONTENT -->
+                <div class="form-group row">
+                    <label for="content-param-entry" class="col-2 col-form-label"><b>Content Description</b></label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" id="content-param-entry" aria-describedby="content-param-help">
+                        <small id="url-param-help" class="form-text text-muted">Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link.</small>
+                    </div>
+                </div>
+                <!-- TERMS -->
+                <div class="form-group row">
+                    <label for="term-param-entry" class="col-2 col-form-label"><b>Ads Terms</b></label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" id="term-param-entry" aria-describedby="term-param-help">
+                        <small id="url-param-help" class="form-text text-muted">Used for paid search to identify keywords for your ad. (Normally not used)</small>
+                    </div>
+                </div>
+                <!-- SOURCES
+                    (i) control your source and medium selections in this section
+                        using the data-source and data-medium attributes (option elements)
+                -->
+                <div class="row">
+                    <div class="col-2 col-form-label">
+                        <label for="source-param-entry"><b>Source/Medium</b></label>
+                    </div>
+                    <div class="form-group col-10">
+                        <select name="source" id="source-param-entry" class="form-control">
+                            <option selected>Select a source...</option>
+                            <option value="oshpd" data-source="oshpd.ca.gov" data-medium="Website">OSHPD Web Site</option>
+                            <option value="email" data-source="ManualEmail" data-medium="email">Manual Email</option>
+                            <option value="emailList" data-source="Campaigner" data-medium="email">Campaigner List</option>
+                            <option value="facebook" data-source="Facebook" data-medium="social">Facebook</option>
+                            <option value="twitter" data-source="Twitter" data-medium="social">Twitter</option>
+                            <option value="linkedin" data-source="LinkedIn" data-medium="social">LinkedIn</option>
+                        </select>
+                        <small id="url-param-help" class="form-text text-muted">Identifies where the link will be placed.</small>
+                    </div>
+                </div>
+                <!-- RESULTS -->
+                <div class="row">
+                    <div class="col-2 col-form-label">
+                        <p><b>Result</b></p>
+                    </div>
+                    <div class="form-group col-10">
+                        <span id="generated-url">Link will appear here.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bootstraps -->
+
+        <script src="vendor/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/js/popper.min.js"></script>
+        <script src="vendor/js/bootstrap.min.js"></script>
+        <script src="vendor/js/clipboard.min.js"></script>
+        <script src="vendor/js/index.js"></script>
+    </body>
+</html>
