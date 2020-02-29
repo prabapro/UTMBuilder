@@ -57,9 +57,9 @@
             '<span class="URLdisplay d-block p-2">' +
             ltObj.trackingLink +
             '</span> ' + 
-            '<a href="#" onclick="return false;" class="copyURL btn btn-outline-dark mt-1" data-clipboard-text="' +
+            '<a href="#" onclick="return false;" class="copyURL btn btn-success btn-block mt-1" data-clipboard-text="' +
             ltObj.trackingLink +
-            '"> Copy </a>' +
+            '"> <i class="fa fa-copy"></i> Copy Link</a>' +
             '</p>';
 
         $('#generated-url').html(ltObj.htmlOutput);
@@ -74,8 +74,8 @@
     // add URL copier event lister and handler
     clipboard = new ClipboardJS('#generated-url .copyURL');
     clipboard.on('success', function(e) {
-        $(e.trigger).html('Copied');
-        $(e.trigger).prev().css('background-color', 'lightgreen');
+        $(e.trigger).html('<i class="fa fa-check-circle"></i> Copied to your clipboard');
+        $(e.trigger).prev().css('color', '#bdb7b7');
         return false;
     });
 

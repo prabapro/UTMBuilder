@@ -1,112 +1,172 @@
-<html>
-    <head>
-        <title>UTM Generator | Dialog Online Marketing</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Praba Ponnambalam">
-        <!-- bootstrap css -->
-        <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
-        <!-- custom css -->
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <div class="container">
-            <div id="Campaign-Link-Generator">
-                <h2>Campaign Link Generator</h2>
-                <small id="CLG-param-help" class="form-text text-muted">Add UTM and ITM parameters to your links!<br>UTM links are used for tracking from external sources.<br>ITM links are only used for internal tracking.</small><br>
-               
-                <!-- URL -->
-                <div class="form-group row">
-                    <label for="url-param-entry" class="col-2 col-form-label"><b>Page URL</b></label>
-                    <div class="col-10">
-                        <input class="form-control" type="text" id="url-param-entry" aria-describedby="url-param-help" required>
-                        <small id="url-param-help" class="form-text text-muted" > The full website URL [e.g: <code>https://www.dialog.lk/iphone11-pro-max]</small></code></small>
-                    </div>
-                </div>
+<!doctype html>
+<html lang="en">
 
-                <!-- CAMPAIGN -->
-                <div class="form-group row">
-                    <label for="campaign-param-entry" class="col-2 col-form-label"><b>Campaign Name</b> <sup>*</sup></label>
-                    <div class="col-10">
-                        <input class="form-control" type="text" id="campaign-param-entry" aria-describedby="url-param-help" >
-                        <small id="url-param-help" class="form-text text-muted">Your campaign name [e.g: <code>iphone11_pro_max_pre_order]</code></small>
-                    </div>
-                </div>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>UTM Generator | Dialog Online Marketing</title>
+    <meta name="author" content="Praba Ponnambalam">
+    <link rel="shortcut icon" href="img/favicon.ico">
 
-                <!-- CONTENT (Used as Language) -->
-                <!-- <div class="form-group row">
-                    <label for="content-param-entry" class="col-2 col-form-label"><b>Content Language</b></label>
-                    <div class="col-10">
-                        <input class="form-control" type="text" id="content-param-entry" aria-describedby="content-param-help">
-                        <small id="url-param-help" class="form-text text-muted">Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link.</small>
-                    </div>
-                </div> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 
-                <div class="row">
-                    <div class="col-2 col-form-label">
-                        <label for="source-param-entry"><b>Language</b> <sup>*</sup></label>
-                    </div>
-                    <div class="form-group col-10">
-                        <select name="content" id="content-param-entry" class="form-control">
-                            <option selected value="english" data-medium="Website">English</option>
-                            <option value="sinhala" data-medium="Website">Sinhala</option>
-                            <option value="tamil" data-medium="Website">Tamil</option>
-                        </select>
-                        <small id="url-param-help" class="form-text text-muted">Campaign / Content language. i.e: The Facebook post is in Sinhala language.</small>
-                    </div>
-                </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 
-                <!-- TERMS (Used as Customer Segment)-->
-                <div class="form-group row">
-                    <label for="term-param-entry" class="col-2 col-form-label"><b>Target Audience</b></label>
-                    <div class="col-10">
-                        <input class="form-control" type="text" id="term-param-entry" aria-describedby="term-param-help">
-                        <small id="url-param-help" class="form-text text-muted"><b>Optional</b> - Can be used to identify specific targeted user segments from CLM systems. <code>[e.g: high_arpu_mobile_cx_base]</code><br>Also can be used for paid search to identify keywords for your ad. <code>[e.g: iphone+11]</code></small>
-                    </div>
-                </div>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/main.css">
 
-                <!-- SOURCES
-                    (i) control your source and medium selections in this section
-                        using the data-source and data-medium attributes (option elements)
-                -->
-                <div class="row">
-                    <div class="col-2 col-form-label">
-                        <label for="source-param-entry"><b>Source/Medium</b> <sup>*</sup></label>
-                    </div>
-                    <div class="form-group col-10">
-                        <select name="source" id="source-param-entry" class="form-control">
-                            <option selected>Select a source...</option>
-                            <option data-source="mydialog" data-medium="banner">MyDialog App Banner</option>
-                            <option data-source="google" data-medium="cpc">Google CPC</option>
-                            <option data-source="cvm" data-medium="sms">CVM SMS</option>
-                            <option data-source="Campaigner" data-medium="email">Campaigner List</option>
-                            <option data-source="Facebook" data-medium="social">Facebook</option>
-                            <option data-source="Twitter" data-medium="social">Twitter</option>
-                            <option data-source="LinkedIn" data-medium="social">LinkedIn</option>
-                        </select>
-                        <small id="url-param-help" class="form-text text-muted">Identifies where the link will be placed.</small>
-                    </div>
-                </div>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-                <!-- RESULTS -->
-                <div class="row">
-                    <div class="col-2 col-form-label">
-                        <p><b>Result</b></p>
-                    </div>
-                    <div class="form-group col-10">
-                        <span id="generated-url">Link will appear here.</span>
-                    </div>
-                </div>
+</head>
+
+<body>
+    <!-- Header & Logo -->
+    <div class="container pt-4">
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <h1><strong>UTM Generator</strong></h1>
+                <p class="text-left">By Online Marketing Team</p>
+            </div>
+
+            <div class="col">
+                <img class="float-right" src="img/dialog_logo.png" alt="Dialog Logo">
             </div>
         </div>
 
-        <!-- bootstraps -->
-        <script src="vendor/js/jquery-3.3.1.slim.min.js"></script>
-        <script src="vendor/js/popper.min.js"></script>
-        <script src="vendor/js/bootstrap.min.js"></script>
-        <!-- Clipboard -->
-        <script src="vendor/js/clipboard.min.js"></script>
-        <!-- JS -->
-        <script src="js/index.js"></script>
-    </body>
+        <!-- Guideline -->
+        <div class="row mt-2">
+            <div class="col col-lg">
+                <p class="h5 text-muted"><strong>Guideline</strong></p>
+                <ul class="text-muted text-small list-unstyled">
+                    <li><i class="fa fa-check-circle"></i> Use lower case only</li>
+                    <li><i class="fa fa-check-circle"></i> Do not use spaces. Use underscore instead (_)</li>
+                    <li><i class="fa fa-check-circle"></i> It's okay to have hyphens in URLs (-)</li>
+                    <li><i class="fa fa-check-circle"></i> Plus (+) to be used for paid keywords (Target
+                        Audience field)</li>
+                    <li><i class="fa fa-check-circle"></i> All the fields are mandatory except <em>Target Audience</em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row mt-4">
+            <!-- Left column for the form (Nested columns) -->
+            <div class="col-xs-12 col-md-12 col-lg-8 col-xl-8 mt-1">
+                <!-- Campaign URL -->
+                <div class="row">
+                    <div class="ol-xs-12 col-md-12 col-lg-3">
+                        <label>Website URL <sup>*</sup></label>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" id="url-param-entry" aria-describedby="url-param-help"
+                            required>
+                        <small id="url-param-help" class="form-text text-muted"> The full website URL [e.g:
+                            <code>https://www.dialog.lk/iphone11-pro-max]</small></code></small>
+                    </div>
+                </div>
+
+                <!-- Campaign Name (utm_campaign) -->
+                <div class="row mt-2">
+                    <div class="ol-xs-12 col-md-12 col-lg-3">
+                        <label>Campaign Name <sup>*</sup></label>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" id="campaign-param-entry"
+                            aria-describedby="url-param-help">
+                        <small id="url-param-help" class="form-text text-muted">Your campaign name [e.g:
+                            <code>iphone11_pro_max_pre_order]</code></small>
+                    </div>
+                </div>
+
+                <!-- Campaign Contend used as language (utm_content) -->
+                <div class="row mt-2">
+                    <div class="ol-xs-12 col-md-12 col-lg-3">
+                        <label>Language <sup>*</sup></label>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <select name="content" id="content-param-entry" class="form-control">
+                                <option selected value="english" data-medium="Website">English</option>
+                                <option value="sinhala" data-medium="Website">Sinhala</option>
+                                <option value="tamil" data-medium="Website">Tamil</option>
+                            </select>
+                            <small id="url-param-help" class="form-text text-muted">Campaign / Content language. i.e:
+                                The
+                                Facebook post is in Sinhala language.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign Term used as Target Audience & Paid Keywords (utm_term) -->
+                <div class="row">
+                    <div class="ol-xs-12 col-md-12 col-lg-3">
+                        <label>Target Audience</label>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="term-param-entry"
+                                aria-describedby="term-param-help">
+                            <small id="url-param-help" class="form-text text-muted"><b>Optional</b> - Can be used to
+                                identify
+                                specific targeted user segments from CLM systems. <code>[e.g:
+                                    high_arpu_mobile_cx_base]</code><br>Also can be used for paid search to identify
+                                keywords
+                                for your ad. <code>[e.g: iphone+11]</code></small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign Source & Medium (utm_source & utm_medium) -->
+                <!-- control source and medium selections in this section
+                using the data-source and data-medium attributes (option elements) -->
+                <div class="row">
+                    <div class="ol-xs-12 col-md-12 col-lg-3">
+                        <label>Source/Medium <sup>*</sup></label>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <select name="source" id="source-param-entry" class="form-control">
+                                <option selected>Select a source...</option>
+                                <option data-source="mydialog" data-medium="banner">MyDialog App Banner</option>
+                                <option data-source="google" data-medium="cpc">Google CPC</option>
+                                <option data-source="cvm" data-medium="sms">CVM SMS</option>
+                                <option data-source="Campaigner" data-medium="email">Campaigner List</option>
+                                <option data-source="Facebook" data-medium="social">Facebook</option>
+                                <option data-source="Twitter" data-medium="social">Twitter</option>
+                                <option data-source="LinkedIn" data-medium="social">LinkedIn</option>
+                            </select>
+                            <small id="url-param-help" class="form-text text-muted">Identifies where the link will be
+                                placed.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column (nested) for the results -->
+            <div class="col-xs-12 col-md-12 col-lg-4 mt-1">
+                <div id="generated-url" class="col">
+                    <p class="text-center">Your link will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstraps -->
+    <script src="vendor/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="vendor/js/popper.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+
+    <!-- Clipboard -->
+    <script src="vendor/js/clipboard.min.js"></script>
+
+    <!-- JS -->
+    <script src="js/index.js"></script>
+</body>
+
 </html>

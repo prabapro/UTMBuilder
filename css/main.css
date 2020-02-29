@@ -1,0 +1,41 @@
+body {
+    font-family: 'Poppins';
+}
+
+ul {
+    padding-inline-start: 20px;
+}
+
+.text-small {
+    font-size: 14px;
+}
+
+label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #2e2c2c;
+}
+
+#url-param-help {
+    font-size: 0.73em;
+}
+
+#generated-url {
+    overflow-wrap: break-word;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 6px;
+    padding: 40px 20px 20px 20px;
+    vertical-align: middle;
+    background: #f5f5e1;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.powered-by {
+    font-size: 12px;
+}
+
+sup {
+    color: rgb(163, 11, 11);
+    font-size: 1em;
+}
