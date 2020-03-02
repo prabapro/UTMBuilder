@@ -35,3 +35,4 @@ The settings file defines the following:
 * campaign names available for suggestions
 * internal and external mediums and sources
 * toggles for optional parameters
+* testing from work pc
